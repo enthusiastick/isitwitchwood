@@ -5,6 +5,9 @@
   <% elsif @next_event.start_time.today? %>
     <h1>Soon.</h1>
     <p>There is a Witchwood event today, but it hasn't started yet.</p>
+  <% elsif @next_event.start_time.between?(@now, @now+6.days) %>
+    <h1>Almost.</h1>
+    <p>Witchwood is this <%= @next_event.start_time.strftime("%A") %>!</p>
   <% else %>
     <h1>No.<h1>
     <p>The next Witchwood event is <%= @next_event.start_time.strftime("%B %-d") %>.</p>
