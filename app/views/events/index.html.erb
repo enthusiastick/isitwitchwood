@@ -1,0 +1,7 @@
+<div class="small-10 small-centered columns">
+  <% @events.each do |event| %>
+    <h5><%= event.name %></h5>
+    <ul><li>Start: <%= event.start_time.strftime("%A, %e %B %Y") %></li>
+      <li>End: <%= event.end_time.strftime("%A, %e %B %Y") %></li></ul>
+  <% end %>
+</div>
