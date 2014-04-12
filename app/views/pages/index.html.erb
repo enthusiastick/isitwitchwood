@@ -1,3 +1,7 @@
-  <div class="small-4 small-centered columns">
-    <h1>No</h1>
-  </div>
+<div class="small-4 small-centered columns">
+  <% unless @now.between?(@next_event.start_time, @next_event.end_time) %>
+    <h1>No.</h1>
+  <% else %>
+    <h1>Yes!</h1>
+  <% end %>
+</div>
