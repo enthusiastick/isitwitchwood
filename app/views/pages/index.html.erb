@@ -1,7 +1,12 @@
 <div class="small-4 small-centered columns">
-  <% unless @now.between?(@next_event.start_time, @next_event.end_time) %>
-    <h1>No.</h1>
-  <% else %>
+  <% if @now.between?(@next_event.start_time, @next_event.end_time) %>
     <h1>Yes!</h1>
+    <p>Hooray!</p>
+  <% elsif @next_event.start_time.today? %>
+    <h1>Soon.</h1>
+    <p>There is a Witchwood event today, but it hasn't started yet.</p>
+  <% else %>
+    <h1>No.<h1>
+    <p>The next Witchwood event is <%= @next_event.start_time.strftime("%B %-d") %>.</p>
   <% end %>
 </div>

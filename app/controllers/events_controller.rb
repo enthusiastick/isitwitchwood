@@ -12,7 +12,7 @@ class EventsController < ApplicationController
   end
 
   def index
-    @events = Event.order(:start_time).limit("10")
+    @events = Event.order(:start_time).where("start_time >= ?", Date.today).limit("10")
   end
 
   def new
