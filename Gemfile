@@ -35,7 +35,7 @@ end
 gem 'simple_form'
 gem 'foundation-rails'
 gem 'foundation-icons-sass-rails'
-gem 'omniauth-google-oauth2'
+gem 'omniauth-github'
 
 group :test, :development do
   gem 'rspec-rails'

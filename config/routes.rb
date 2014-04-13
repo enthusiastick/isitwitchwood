@@ -4,4 +4,6 @@ Singleserve::Application.routes.draw do
 
   resources :events
 
+  get '/auth/:provider/callback', to: 'events#new'
+
 end

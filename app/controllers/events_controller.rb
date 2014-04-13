@@ -11,11 +11,22 @@ class EventsController < ApplicationController
     end
   end
 
+  def destroy
+    @event = Event.find(params[:id])
+    if @event.destroy
+      redirect_to events_path
+    else
+      flash.now['alert-bos alert'] = "Error! Unable to delete."
+      render :index
+    end
+  end
+
   def index
     @events = Event.order(:start_time).where("start_time >= ?", Date.today).limit("10")
   end
 
   def new
+    binding.pry
     @event = Event.new
   end
 

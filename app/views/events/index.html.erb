@@ -1,7 +1,7 @@
 <div class="small-10 small-centered columns">
   <h3>Events</h3>
   <% @events.each do |event| %>
-    <h5><%= event.name %></h5>
+    <h5><%= event.name %> <%= link_to('xyz', { action: "destroy", id: event.id }, method: :delete, data: { confirm: "Are you sure?" }) %></h5>
     <ul><li>Start: <%= event.start_time.strftime("%A, %e %B %Y @ %H:%M") %></li>
       <li>End: <%= event.end_time.strftime("%A, %e %B %Y @ %H:%M") %></li></ul>
   <% end %>
