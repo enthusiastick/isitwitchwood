@@ -1,4 +1,4 @@
-<div class="small-6 small-centered columns" style="padding-top: 150px;">
+<div class="small-8 small-centered columns" style="padding-top: 150px;">
   <% unless @next_event == nil %>
     <% if @now.between?(@next_event.start_time, @next_event.end_time) %>
       <h1>Yes!</h1>
@@ -11,7 +11,7 @@
       <h3>Witchwood is this <%= @next_event.start_time.strftime("%A") %>!</h3>
     <% else %>
       <h1>No.<h1>
-      <h3>Witchwood is <%= @next_event.start_time.strftime("%B %-d") %>.</h3>
+      <h3><span id="counter"><%= @next_event.start_time %></span> until Witchwood.</h3>
     <% end %>
   <% else %>
     <h1>No.</h1>
